@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="prj-OAKL-XPC0A9SVV_PAURUSCRA2016 ETLJobMeta"
+  DTS:DTSID="{7D3BFE85-4304-4415-9991-FC9632AE6CAF}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=OAKL-XPC0A9SVV\PAURUSCRA2016;Initial Catalog=ETLJobMeta;Integrated Security=True;Application Name=SSIS-ssStageVwGtTierInfo-{7D3BFE85-4304-4415-9991-FC9632AE6CAF}OAKL-XPC0A9SVV\PAURUSCRA2016.ETLJobMeta1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

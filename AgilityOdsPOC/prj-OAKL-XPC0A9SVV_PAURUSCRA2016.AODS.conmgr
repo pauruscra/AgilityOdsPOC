@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="prj-OAKL-XPC0A9SVV_PAURUSCRA2016 AODS"
+  DTS:DTSID="{197631C4-A195-49B2-A497-39D89F0A080D}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=OAKL-XPC0A9SVV\PAURUSCRA2016;Initial Catalog=AODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

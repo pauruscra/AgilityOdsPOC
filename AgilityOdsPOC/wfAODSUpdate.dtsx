@@ -1,0 +1,1301 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/13/2016 10:23:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="OAKL-XPC0A9SVV"
+  DTS:CreatorName="USGTAD\US38295"
+  DTS:DTSID="{CA517C4D-D677-42D9-8D53-EC7C985119D8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.1601.5"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="wfAodsUpdate"
+  DTS:PackageType="5"
+  DTS:VersionBuild="155"
+  DTS:VersionGUID="{E7EEF1E5-07D0-472F-A90F-3267FDE1C6D6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OAKL-XPC0A9SVV\PAURUSCRA2016.ETLJobMeta]"
+      DTS:CreationName="ADO"
+      DTS:DTSID="{B479FBEE-F459-45DD-B0C1-A96662EC6485}"
+      DTS:ObjectName="OAKL-XPC0A9SVV\PAURUSCRA2016.ETLJobMeta">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=OAKL-XPC0A9SVV\PAURUSCRA2016;Initial Catalog=ETLJobMeta;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OAKL-XPC0A9SVV\PAURUSCRA2016.ETLJobMeta1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{253B3CAA-65AB-458B-985F-42C242F53F76}"
+      DTS:ObjectName="OAKL-XPC0A9SVV\PAURUSCRA2016.ETLJobMeta1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=OAKL-XPC0A9SVV\PAURUSCRA2016;Initial Catalog=ETLJobMeta;Integrated Security=True;Application Name=SSIS-wfAodsUpdate-{253B3CAA-65AB-458B-985F-42C242F53F76}OAKL-XPC0A9SVV\PAURUSCRA2016.ETLJobMeta1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:Description="Required if RunMode = 2, Select the ETLProcessId to rerun"
+      DTS:DTSID="{58F384C7-C5F7-426B-AF97-256969DAF403}"
+      DTS:ObjectName="pwfEtlProcessIdRerun">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:Description="Required if RunModeOverride = 5"
+      DTS:DTSID="{9F3FE6E7-4349-4E37-9139-B68473573931}"
+      DTS:ObjectName="pwfEtlSourceExtractStateDateOverride">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">8/21/2016 8:30:00 PM</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:Description="Required if RunModeOverride = 5"
+      DTS:DTSID="{9F45AF79-9393-430F-8F5E-34BEBAC10EE8}"
+      DTS:ObjectName="pwfEtlSourceExtractStopDateOverride">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">8/21/2016 8:30:33 PM</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{48533185-E3AC-4694-90EE-87E9C8D78F85}"
+      DTS:ObjectName="pwfRunModeEtlOverrideId">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:Description="1 = Full, 2 = Rerun, 3 CDC Workflow Level, 4 CDC Session Lever, 5 Source Extract Override"
+      DTS:DTSID="{7FA210FA-9A4C-4318-BAF5-FEB7759EFC43}"
+      DTS:ObjectName="pwfRunModeOverride">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3910D694-0E40-47CA-9AF1-7E88C6C412F7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EtlProcessIdUpdateResult">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{25865CD1-D35F-4E94-9545-FA53C6938FDF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="Package"
+      DTS:ObjectName="ProcessRunModeEtlOverrideId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{10580CE5-ECC4-48B7-A10B-DDD7B18A8AC1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfErrorCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{75317173-0D98-4298-8628-495F45EC5B41}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfEtlProcessId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8BB2D74D-E3DC-4934-B07F-84AB136DF44D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfEtlProcessIdCreateProcessStatus">
+      <DTS:VariableValue
+        DTS:DataType="8">Running</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E41B2D58-405C-42A3-A555-76F132CAC384}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfEtlProcessIdCreateReturnCode">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4395C157-E7E5-428A-AF2B-E6E195F6D664}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfEtlProcessIdCreateTranType">
+      <DTS:VariableValue
+        DTS:DataType="8">I</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FAA3E16E-C818-4043-9D13-773D646FE8BA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfEtlProcessIdOverride">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5D328415-B5DE-4039-A656-43B61C0FABDA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfEtlProcessIdUpdateProcessStatus">
+      <DTS:VariableValue
+        DTS:DataType="8">Succeeded</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6E0CD95D-B0E3-40BD-B73A-B65009089763}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfPackageType"
+      DTS:ReadOnly="True">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BA431064-1899-4FA5-B85C-4B6034C5344B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfPackageTypeIsWorkFlow">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7FA9CB09-5818-4EAA-9A77-5D28D2704F0D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcess">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7F557BAD-72C0-4929-A2EB-8082B936EFA1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::ContainerStartTime]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessRunDate">
+      <DTS:VariableValue
+        DTS:DataType="7">8/25/2016 7:55:28 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{38D28024-0896-4A41-86FF-8ABD775D0CD3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR, 30) @[User::wfProcessRunDate]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessRunDateString">
+      <DTS:VariableValue
+        DTS:DataType="8">2016-08-25 7:55:28 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2D0B7333-BD61-430B-94FD-832F5CAAFA09}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::wfProcessRunModeRestart]  ? 2:  @[User::wfProcessRunModeFullRefresh]  ? 1:  @[User::wfProcessRunModeCDCProcessLevel]  ? 3: @[User::wfProcessRunModeCDCSessionLevel]  ? 4: 5"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessRunMode">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6A056370-AD22-4912-AF55-6B07B8375A75}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessRunModeCDCProcessLevel">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E74C860-D327-4CEF-AF5B-2EB86A295D5F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessRunModeCDCSessionLevel">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DC77BE6D-5E87-4BA1-96DB-D2330E25A966}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessRunModeFullRefresh">
+      <DTS:VariableValue
+        DTS:DataType="11">-1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A7A8C89F-07E7-4625-9B11-9E829F3364C3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessRunModeRestart">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FFC9BDAF-8C1C-4B50-92AE-144C8B216673}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessRunModeRestartEltProcessId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4304A578-92DC-40F2-A53D-B2EB5A525C6B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::ContainerStartTime]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessStartDate">
+      <DTS:VariableValue
+        DTS:DataType="7">8/25/2016 7:55:28 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F16E6A39-9750-4A91-8798-FE402234896B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR, 30)  @[User::wfProcessStartDate]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessStartDateString">
+      <DTS:VariableValue
+        DTS:DataType="8">2016-08-25 7:55:28 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{13E11E75-594C-49DF-8067-B5D13E9025FC}"
+      DTS:Expression="NULL(DT_DATE)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessStopDate"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0D0AB3D9-E342-4ACF-854F-C9EC77935BCB}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR, 30) @[User::wfProcessStopDate]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfProcessStopDateString"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E59F6242-9FC0-4E9C-98E6-89092D15166C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfSourceExtractStartDate">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F0879FF8-95D2-4E0F-8450-6C27DBBA3667}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR, 30) @[User::wfSourceExtractStartDate]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfSourceExtractStartDateString">
+      <DTS:VariableValue
+        DTS:DataType="8">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{675430F3-0B61-4502-941E-BC041D2E5848}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfSourceExtractStopDate">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3DECED14-13EC-4B86-A7AA-BA7FAB214015}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR, 30) @[User::wfSourceExtractStopDate]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfSourceExtractStopDateString">
+      <DTS:VariableValue
+        DTS:DataType="8">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3815293F-7912-4412-87D7-476CE1411042}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::PackageName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="wfWorkFlowPackageName"
+      DTS:ReadOnly="True">
+      <DTS:VariableValue
+        DTS:DataType="8">wfAodsUpdate</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ETLProcess Create"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1723fc0f-5a45-45be-a6b5-3499dabd6562}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETLProcess Create"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{253B3CAA-65AB-458B-985F-42C242F53F76}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[EtlProcessIdCreate] &#xA;   @p_WorkFlowProjectFolderName&#xA;  ,@p_WorkFlowPackageId&#xA;  ,@p_WorkFlowPackageName&#xA;  ,@p_ProcessRunMode&#xA;  ,@p_ProcessRunModeRestartEtlProcessId&#xA;  ,@p_ProcessRunModeEtlOverrideId&#xA;  ,@p_SourceExtractStartDate&#xA;  ,@p_SourceExtractStopDate&#xA;  ,@p_ProcessRunDate&#xA;  ,@p_ProcessStartDate&#xA;  ,@p_ProcessStatus&#xA;&#xA;&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::wfEtlProcessId" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_WorkFlowProjectFolderName"
+            SQLTask:DtsVariableName="$Project::ProjectFolder"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="240" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_WorkFlowPackageId"
+            SQLTask:DtsVariableName="System::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="30" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_WorkFlowPackageName"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="240" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_SourceExtractStartDate"
+            SQLTask:DtsVariableName="User::wfSourceExtractStartDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="30" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_SourceExtractStopDate"
+            SQLTask:DtsVariableName="User::wfSourceExtractStopDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="30" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_ProcessRunDate"
+            SQLTask:DtsVariableName="User::wfProcessRunDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="30" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_ProcessStartDate"
+            SQLTask:DtsVariableName="User::wfProcessRunDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="30" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_ProcessStatus"
+            SQLTask:DtsVariableName="User::wfEtlProcessIdCreateProcessStatus"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="10" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_ProcessRunMode"
+            SQLTask:DtsVariableName="User::wfProcessRunMode"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_ProcessRunModeRestartEtlProcessId"
+            SQLTask:DtsVariableName="$Package::pwfEtlProcessIdRerun"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_ProcessRunModeEtlOverrideId"
+            SQLTask:DtsVariableName="$Package::pwfRunModeEtlOverrideId"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ETLProcess Update"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{77a93bf3-71da-41e6-b68a-9c32f71f1733}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETLProcess Update"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{253B3CAA-65AB-458B-985F-42C242F53F76}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[EtlProcessIdUpdate] &#xA;   @p_WorkFlowPackageName&#xA;  ,@p_SourceExtractStartDate&#xA;  ,@p_SourceExtractStopDate&#xA;  ,@p_ProcessStopDate&#xA;  ,@p_ProcessStatus&#xA;  ,@p_EtlProcessId"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::EtlProcessIdUpdateResult" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_WorkFlowPackageName"
+            SQLTask:DtsVariableName="User::wfWorkFlowPackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="240" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_SourceExtractStartDate"
+            SQLTask:DtsVariableName="User::wfSourceExtractStartDateString"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="30" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_SourceExtractStopDate"
+            SQLTask:DtsVariableName="User::wfSourceExtractStopDateString"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="30" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_ProcessStopDate"
+            SQLTask:DtsVariableName="User::wfProcessStopDateString"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="30" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_ProcessStatus"
+            SQLTask:DtsVariableName="User::wfEtlProcessIdUpdateProcessStatus"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="10" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_EtlProcessId"
+            SQLTask:DtsVariableName="User::wfEtlProcessId"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetSourceExtractDates"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{60681F1F-C80C-4828-8BD8-46FF2C3CA643}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetSourceExtractDates"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7D3BFE85-4304-4415-9991-FC9632AE6CAF}"
+          SQLTask:SqlStatementSource="EXECUTE  [dbo].[GetSourceExtractDates] &#xA;   @p_PackageRunMode&#xA;  ,@p_PackageType&#xA;  ,@p_PackageName&#xA;  ,@p_PackageRunModeRestartEltProcessId&#xA;  ,@p_EtlSourceExtractStateDateOverride&#xA;  ,@p_EtlSourceExtractStopDateOverride&#xA;&#xA;&#xA;&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::wfSourceExtractStartDate" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="1"
+            SQLTask:DtsVariableName="User::wfSourceExtractStopDate" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_PackageRunMode"
+            SQLTask:DtsVariableName="User::wfProcessRunMode"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_PackageType"
+            SQLTask:DtsVariableName="User::wfPackageType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_PackageName"
+            SQLTask:DtsVariableName="User::wfWorkFlowPackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="240" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_PackageRunModeRestartEltProcessId"
+            SQLTask:DtsVariableName="$Package::pwfEtlProcessIdRerun"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_EtlSourceExtractStateDateOverride"
+            SQLTask:DtsVariableName="$Package::pwfEtlSourceExtractStateDateOverride"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@p_EtlSourceExtractStopDateOverride"
+            SQLTask:DtsVariableName="$Package::pwfEtlSourceExtractStopDateOverride"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Increment Error Count  Stage Tier Info"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{BCFB98CD-5AF1-48C0-89D3-4E45916AB766}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Increment Error Count  Stage Tier Info"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::wfErrorCount]= @[User::wfErrorCount] + 1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Increment Error Count Stage Employee Info"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{5fcb76d3-78fe-4299-8c54-da3cf568d677}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Increment Error Count Stage Employee Info"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::wfErrorCount]= @[User::wfErrorCount] + 1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\See Process Status to Succeeded"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{5eae3d1a-b2a5-4b78-9d2e-640e3d54ba0c}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="See Process Status to Succeeded"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::wfEtlProcessIdUpdateProcessStatus] = &quot;Succeeded&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set WorkFlow Process Status"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{441E1859-EA5F-4C2D-894A-3342150B98A1}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set WorkFlow Process Status"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::wfEtlProcessIdUpdateProcessStatus] = @[User::wfErrorCount] != 0  ? &quot;Failed&quot;: &quot;Succeeded&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SetProcessStopDate"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{9D696544-D0D5-4467-BC9F-2C9244B8D06C}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SetProcessStopDate"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::wfProcessStopDate] = GETDATE()" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SetProcessStopDateTime"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{7FE181BA-BBF3-4D43-BB11-9D2FBFA1CA21}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SetProcessStopDateTime"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::wfProcessStopDateString] =  (DT_WSTR, 30) @[User::wfProcessStopDate]" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ssStageVwGtEmployee"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Retrieves Tier Info From GTODS"
+      DTS:DTSID="{677baeab-f80d-411d-bdd0-298481cdbae1}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ssStageVwGtEmployee"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>ssStageVwGtEmployee.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>pssEtlProcessId</ParameterName>
+            <BindedVariableOrParameterName>wfEtlProcessId</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>pssProcessRunModeRestartEltProcessId</ParameterName>
+            <BindedVariableOrParameterName>User::wfProcessRunModeRestartEltProcessId</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>pssSessionRunMode</ParameterName>
+            <BindedVariableOrParameterName>User::wfProcessRunMode</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>pssSourceExtractStartDateString</ParameterName>
+            <BindedVariableOrParameterName>User::wfSourceExtractStartDateString</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>pssSourseExtractStopDateString</ParameterName>
+            <BindedVariableOrParameterName>User::wfProcessStopDateString</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ssStageVwGtTierInfo"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Retrieves Tier Info From GTODS"
+      DTS:DTSID="{728F8060-6566-4D0A-B8C4-5988636CB72B}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ssStageVwGtTierInfo"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>ssStageVwGtTierInfo.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>pssEtlProcessId</ParameterName>
+            <BindedVariableOrParameterName>wfEtlProcessId</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>pssProcessRunModeRestartEltProcessId</ParameterName>
+            <BindedVariableOrParameterName>User::wfProcessRunModeRestartEltProcessId</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>pssSessionRunMode</ParameterName>
+            <BindedVariableOrParameterName>User::wfProcessRunMode</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>pssSourceExtractStartDateString</ParameterName>
+            <BindedVariableOrParameterName>User::wfSourceExtractStartDateString</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>pssSourseExtractStopDateString</ParameterName>
+            <BindedVariableOrParameterName>User::wfProcessStopDateString</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A121486A-CAD2-4395-9C15-25072B1085D6}"
+      DTS:From="Package\ETLProcess Create"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\ssStageVwGtTierInfo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{466E80C0-FF1D-4B80-87E7-2C442B59D46B}"
+      DTS:From="Package\SetProcessStopDateTime"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\ETLProcess Update" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{FCA39040-387E-4450-85DA-F6D98391AA2F}"
+      DTS:From="Package\See Process Status to Succeeded"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\Set WorkFlow Process Status" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{F62F9D0D-3017-4B47-A7AB-E7F5942CF910}"
+      DTS:From="Package\Set WorkFlow Process Status"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\SetProcessStopDate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{5892B90B-4DF8-428B-B1B7-1064808261DB}"
+      DTS:From="Package\Increment Error Count Stage Employee Info"
+      DTS:ObjectName="Constraint 12"
+      DTS:To="Package\Set WorkFlow Process Status" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{44CFF7BD-3BCF-420D-8F6D-812DC6F2C9C8}"
+      DTS:From="Package\SetProcessStopDate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\SetProcessStopDateTime" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{F0EAFEAF-2D9D-4175-A512-D7FD4EAEB123}"
+      DTS:From="Package\GetSourceExtractDates"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\ETLProcess Create" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{5839FE25-E11A-49BD-935D-04282355FA0C}"
+      DTS:From="Package\ssStageVwGtTierInfo"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\See Process Status to Succeeded" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{AB18BBDF-E7AC-4290-8C35-810326F047F3}"
+      DTS:From="Package\ssStageVwGtTierInfo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Increment Error Count  Stage Tier Info"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{A9CDBCF2-6F89-4519-A25C-1D94D9FF08E4}"
+      DTS:From="Package\Increment Error Count  Stage Tier Info"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Set WorkFlow Process Status" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{E44E85D9-C09D-4FDE-BF05-A2C9C8574F08}"
+      DTS:From="Package\ssStageVwGtEmployee"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\See Process Status to Succeeded" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{42CA4C5F-62AB-49DF-B168-F5B74C352592}"
+      DTS:From="Package\ssStageVwGtEmployee"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Increment Error Count Stage Employee Info"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{C823ECC9-D20B-43AA-8A34-E895E01E9CB2}"
+      DTS:From="Package\ETLProcess Create"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\ssStageVwGtEmployee" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\ETLProcess Create"
+          TopLeft="299.75,175.75" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\ETLProcess Update"
+          TopLeft="844.75,647.75" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\GetSourceExtractDates"
+          TopLeft="287.75,100.75" />
+        <NodeLayout
+          Size="262,42"
+          Id="Package\Increment Error Count  Stage Tier Info"
+          TopLeft="11.75,505.75" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Increment Error Count Stage Employee Info"
+          TopLeft="827.75,343.75" />
+        <NodeLayout
+          Size="234,42"
+          Id="Package\See Process Status to Succeeded"
+          TopLeft="502.75,355.75" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Set WorkFlow Process Status"
+          TopLeft="809.75,415.75" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\SetProcessStopDate"
+          TopLeft="837.75,493.75" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\SetProcessStopDateTime"
+          TopLeft="825.75,570.75" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\ssStageVwGtEmployee"
+          TopLeft="578.75,246.75" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\ssStageVwGtTierInfo"
+          TopLeft="46.75,243.75" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="356.416666666667,217.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-221.166666666667,26"
+              Start="0,0"
+              End="-221.166666666667,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,6.54892601431981" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,6.54892601431981"
+                    Point2="0,10.5489260143198"
+                    Point3="-4,10.5489260143198" />
+                  <mssgle:LineSegment
+                    End="-217.166666666667,10.5489260143198" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-217.166666666667,10.5489260143198"
+                    Point2="-221.166666666667,10.5489260143198"
+                    Point3="-221.166666666667,14.5489260143198" />
+                  <mssgle:LineSegment
+                    End="-221.166666666667,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="926.5,612.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="736.75,376.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73,60"
+              Start="0,0"
+              End="65.5,60">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.5,0"
+                    Point2="36.5,0"
+                    Point3="36.5,4" />
+                  <mssgle:LineSegment
+                    End="36.5,56" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.5,56"
+                    Point2="36.5,60"
+                    Point3="40.5,60" />
+                  <mssgle:LineSegment
+                    End="65.5,60" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="920.75,457.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="918.75,385.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="924,535.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="382,142.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="163.416666666667,285.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="418.666666666667,70"
+              Start="0,0"
+              End="418.666666666667,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.0944602272727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.0944602272727"
+                    Point2="0,35.0944602272727"
+                    Point3="4,35.0944602272727" />
+                  <mssgle:LineSegment
+                    End="414.666666666667,35.0944602272727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="414.666666666667,35.0944602272727"
+                    Point2="418.666666666667,35.0944602272727"
+                    Point3="418.666666666667,39.0944602272727" />
+                  <mssgle:LineSegment
+                    End="418.666666666667,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="103.75,285.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,220"
+              Start="0,0"
+              End="0,212.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,212.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.24134765625,101.37548828125,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="185.083333333333,505.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="697.666666666667,-48"
+              Start="0,0"
+              End="697.666666666667,-40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-19.9606172753299" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-19.9606172753299"
+                    Point2="0,-23.9606172753299"
+                    Point3="4,-23.9606172753299" />
+                  <mssgle:LineSegment
+                    End="693.666666666667,-23.9606172753299" />
+                  <mssgle:CubicBezierSegment
+                    Point1="693.666666666667,-23.9606172753299"
+                    Point2="697.666666666667,-23.9606172753299"
+                    Point3="697.666666666667,-27.9606172753299" />
+                  <mssgle:LineSegment
+                    End="697.666666666667,-40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="642.083333333333,288.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.3333333333333,67"
+              Start="0,0"
+              End="15.3333333333333,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5724912090885" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5724912090885"
+                    Point2="0,33.5724912090885"
+                    Point3="4,33.5724912090885" />
+                  <mssgle:LineSegment
+                    End="11.3333333333333,33.5724912090885" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.3333333333333,33.5724912090885"
+                    Point2="15.3333333333333,33.5724912090885"
+                    Point3="15.3333333333333,37.5724912090885" />
+                  <mssgle:LineSegment
+                    End="15.3333333333333,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="701.416666666667,288.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="218.833333333333,55"
+              Start="0,0"
+              End="218.833333333333,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.2814498933902" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.2814498933902"
+                    Point2="0,22.2814498933902"
+                    Point3="4,22.2814498933902" />
+                  <mssgle:LineSegment
+                    End="214.833333333333,22.2814498933902" />
+                  <mssgle:CubicBezierSegment
+                    Point1="214.833333333333,22.2814498933902"
+                    Point2="218.833333333333,22.2814498933902"
+                    Point3="218.833333333333,26.2814498933902" />
+                  <mssgle:LineSegment
+                    End="218.833333333333,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="94.1753190104167,27.2814498933902,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="409.083333333333,217.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="262.666666666667,29"
+              Start="0,0"
+              End="262.666666666667,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.76610978520287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.76610978520287"
+                    Point2="0,11.7661097852029"
+                    Point3="4,11.7661097852029" />
+                  <mssgle:LineSegment
+                    End="258.666666666667,11.7661097852029" />
+                  <mssgle:CubicBezierSegment
+                    Point1="258.666666666667,11.7661097852029"
+                    Point2="262.666666666667,11.7661097852029"
+                    Point3="262.666666666667,15.7661097852029" />
+                  <mssgle:LineSegment
+                    End="262.666666666667,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

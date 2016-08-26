@@ -1,0 +1,615 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/6/2016 12:31:41 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="OAKL-XPC0A9SVV"
+  DTS:CreatorName="USGTAD\US38295"
+  DTS:DTSID="{42D20067-8C11-47D1-ACDC-9E9EF2F58F7E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.1601.5"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="OrgMemberUpdate"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{5239B994-65F0-423B-9A1C-F0CE0C982BB8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AODS]"
+      DTS:CreationName="ADO.NET:SQL"
+      DTS:DTSID="{2DBE8BA7-B811-4966-A57C-F21AE0640690}"
+      DTS:ObjectName="AODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=OAKL-XPC0A9SVV\PAURUSCRA2016;Integrated Security=SSPI;Connect Timeout=30;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OAKL-XPC0A9SVV\PAURUSCRA2016.AODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{86852F6A-9BAD-4BCC-B09F-AE7AE6009A8A}"
+      DTS:ObjectName="OAKL-XPC0A9SVV\PAURUSCRA2016.AODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=OAKL-XPC0A9SVV\PAURUSCRA2016;Initial Catalog=AODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OAKL-XPC0A9SVV\PAURUSCRA2016.AODS1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{C0B9BCAC-B333-4FD5-84E9-7611394C8622}"
+      DTS:ObjectName="OAKL-XPC0A9SVV\PAURUSCRA2016.AODS1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=OAKL-XPC0A9SVV\PAURUSCRA2016;Initial Catalog=AODS;Integrated Security=True;Application Name=SSIS-OrgMemberUpdate-{C0B9BCAC-B333-4FD5-84E9-7611394C8622}OAKL-XPC0A9SVV\PAURUSCRA2016.AODS1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OAKL-XPC0A9SVV\PAURUSCRA2016.AODS1 1]"
+      DTS:CreationName="ADO.NET:OLEDB"
+      DTS:DTSID="{64516456-C0A3-4ACB-A545-71CA6B0268E6}"
+      DTS:ObjectName="OAKL-XPC0A9SVV\PAURUSCRA2016.AODS1 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=OAKL-XPC0A9SVV\PAURUSCRA2016;Initial Catalog=AODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{058FD4C9-0826-4633-9C49-9CA34F7A4163}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OrgMemberIdCode">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B9E27B0F-872A-483E-A98C-0B150019BD52}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OrgMemberList">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{41B4D347-0B71-42E3-B7A4-2827AA49D23E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="OrgTypeId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{05A8EF79-2986-4EC1-84E8-4113C1AD7D35}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TierRows">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\EtlProcessUpdateOrgs"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{5DC8781B-D09E-4454-98F8-8453064AFDA2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EtlProcessUpdateOrgs">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{3A8F665D-2BFD-4BE6-9DD5-E77646D0ED58}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="OrgList">
+          <DTS:VariableValue
+            DTS:DataSubType="ManagedSerializable"
+            DTS:DataType="13">
+            <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+              <SOAP-ENV:Body>
+                <xsd:anyType
+                  id="ref-1"></xsd:anyType>
+              </SOAP-ENV:Body>
+            </SOAP-ENV:Envelope>
+          </DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Loops through Source Tier Row"
+          DTS:DTSID="{4A419419-3F39-4A71-A9CD-AFE30E2DB517}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Foreach Source Tier Row">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.ForEachADOEnumerator"
+            DTS:DTSID="{678900DD-26F0-4F35-9893-D0E4096C01E3}"
+            DTS:ObjectName="{678900DD-26F0-4F35-9893-D0E4096C01E3}">
+            <DTS:ObjectData>
+              <FEEADO
+                EnumType="EnumerateRowsInFirstTable"
+                VarName="User::TierRows" />
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:Disabled="True"
+              DTS:DTSID="{7EE3E778-D9AA-4A17-B14E-17081529C9B7}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row"
+              DTS:CreationName="STOCK:FOREACHLOOP"
+              DTS:Description="Foreach Loop Container"
+              DTS:DTSID="{50200A2B-6DCD-43DF-A01D-06D2205C17A3}"
+              DTS:ExecutableType="STOCK:FOREACHLOOP"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Foreach Org Row">
+              <DTS:Variables />
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row\Foreach Org Member List"
+                  DTS:CreationName="STOCK:FOREACHLOOP"
+                  DTS:Description="Foreach Loop Container"
+                  DTS:Disabled="True"
+                  DTS:DTSID="{EEB0AA14-EF3D-499C-85FA-4E63BCA68D86}"
+                  DTS:ExecutableType="STOCK:FOREACHLOOP"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Foreach Org Member List">
+                  <DTS:ForEachEnumerator
+                    DTS:CreationName="Microsoft.ForEachADOEnumerator"
+                    DTS:DTSID="{C5920650-E4F0-4751-9C36-1C8B5D62BF98}"
+                    DTS:ObjectName="{C5920650-E4F0-4751-9C36-1C8B5D62BF98}">
+                    <DTS:ObjectData>
+                      <FEEADO
+                        EnumType="EnumerateRowsInFirstTable"
+                        VarName="" />
+                    </DTS:ObjectData>
+                  </DTS:ForEachEnumerator>
+                  <DTS:Variables />
+                  <DTS:Executables>
+                    <DTS:Executable
+                      DTS:refId="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row\Foreach Org Member List\Create OrgRow"
+                      DTS:CreationName="Microsoft.Pipeline"
+                      DTS:Description="Data Flow Task"
+                      DTS:DTSID="{6D53B993-F4B3-45E4-BD5C-B04DA4F4ED03}"
+                      DTS:ExecutableType="Microsoft.Pipeline"
+                      DTS:LocaleID="-1"
+                      DTS:ObjectName="Create OrgRow"
+                      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                      <DTS:Variables />
+                      <DTS:ObjectData>
+                        <pipeline
+                          version="1" />
+                      </DTS:ObjectData>
+                    </DTS:Executable>
+                  </DTS:Executables>
+                  <DTS:ForEachVariableMappings>
+                    <DTS:ForEachVariableMapping
+                      DTS:CreationName=""
+                      DTS:DTSID="{6D67BB6F-56B8-47BF-9BFF-93E5F9456B5A}"
+                      DTS:ObjectName="{6D67BB6F-56B8-47BF-9BFF-93E5F9456B5A}"
+                      DTS:ValueIndex="0"
+                      DTS:VariableName="User::OrgList" />
+                  </DTS:ForEachVariableMappings>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:refId="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row\Get Org Member List"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{A7A7EE89-1C45-4BCC-A339-B91A7157092B}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Get Org Member List"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+                  DTS:ThreadHint="0">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{86852F6A-9BAD-4BCC-B09F-AE7AE6009A8A}"
+                      SQLTask:BypassPrepare="False"
+                      SQLTask:SqlStatementSource="SELECT [OrgmlComponentSequenceNumber],[OrgmlComponentOrgIdCode], &#xA; FROM [dbo].[TemporalOrgMemberList]&#xA;WHERE [OrgmlMemberOrgIdCode] = ?"
+                      SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ResultBinding
+                        SQLTask:ResultName="0"
+                        SQLTask:DtsVariableName="User::OrgMemberList" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="Parameter1"
+                        SQLTask:DtsVariableName="User::OrgList"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="130"
+                        SQLTask:ParameterSize="20" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:refId="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row.PrecedenceConstraints[Constraint]"
+                  DTS:CreationName=""
+                  DTS:DTSID="{B999807C-5697-41E2-BF12-FF9AA5A01F80}"
+                  DTS:From="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row\Get Org Member List"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint"
+                  DTS:To="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row\Foreach Org Member List" />
+              </DTS:PrecedenceConstraints>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Get Org List"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{B893A32E-C15C-44BE-ADB8-7976B768730D}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Get Org List"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{86852F6A-9BAD-4BCC-B09F-AE7AE6009A8A}"
+                  SQLTask:SqlStatementSource="SELECT        OrgIdCode &#xA;FROM            AODS.dbo.TemporalOrg&#xA;ORDER BY OrgTypeId, OrgIdCode"
+                  SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="0"
+                    SQLTask:DtsVariableName="User::OrgList" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{2B975549-A1C8-48B8-8652-CACD2D1D1201}"
+              DTS:From="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Get Org List"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row" />
+          </DTS:PrecedenceConstraints>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{FE048249-FDA5-4565-BBF8-E57A73CEAB4F}"
+              DTS:ObjectName="{FE048249-FDA5-4565-BBF8-E57A73CEAB4F}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::TierRows" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\EtlProcessUpdateOrgs\GetTierInfo"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2DEAD186-C3DC-42DC-97C6-0B1C90F63CDA}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GetTierInfo"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{86852F6A-9BAD-4BCC-B09F-AE7AE6009A8A}"
+              SQLTask:SqlStatementSource="SELECT        OrgTier, OrgLineOfBusinessName, OrgServiceLineCode, OrgServiceLineName, OrgLocationCode, OrgLocationName, OrgServiceLineGroup, OrgLocationGroupCode, OrgLocationGroupName, OrgRegionCode, &#xA;                         OrgRegionName, OrgLineOfBusinessCode, OrgMarketCode, OrgMarketName, OrgMarketGroupCode, OrgMarketGroupName, OrgIsActive, OrgDateModified&#xA;FROM            StageTierInfoSource"
+              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::TierRows" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\EtlProcessUpdateOrgs\Import Source System Org  Info"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7F7C8FA3-4609-4724-A385-29B9A7258EF0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Source System Org  Info"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\EtlProcessUpdateOrgs\Truncate Org Stage Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9fd69c94-6a36-43a5-a25c-c6ee716725cb}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate Org Stage Tables"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{86852F6A-9BAD-4BCC-B09F-AE7AE6009A8A}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.StageOrgMember&#xA;TRUNCATE TABLE dbo.StageOrgMemberComponent" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\EtlProcessUpdateOrgs.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B785C527-DA19-4498-80F6-B645B4CDF4B2}"
+          DTS:From="Package\EtlProcessUpdateOrgs\Truncate Org Stage Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\EtlProcessUpdateOrgs\Import Source System Org  Info" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\EtlProcessUpdateOrgs.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{BFFCB1C4-CF4E-4702-BA1E-946E61F05BC7}"
+          DTS:From="Package\EtlProcessUpdateOrgs\GetTierInfo"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\EtlProcessUpdateOrgs.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{F6314C11-580E-412B-A8F7-7AEBC9CDFB6F}"
+          DTS:From="Package\EtlProcessUpdateOrgs\Import Source System Org  Info"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\EtlProcessUpdateOrgs\GetTierInfo" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Execute SQL Task"
+          TopLeft="175,215" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row\Get Org Member List"
+          TopLeft="124.333333333333,49.3333333333334" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row\Foreach Org Member List\Create OrgRow"
+          TopLeft="66.3333333333334,140.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="321,506"
+          Size="321,548"
+          Id="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row\Foreach Org Member List"
+          TopLeft="79,122.666666666667" />
+        <EdgeLayout
+          Id="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row.PrecedenceConstraints[Constraint]"
+          TopLeft="212.833333333333,91.3333333333334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.6666666666667,31.3333333333334"
+              Start="0,0"
+              End="26.6666666666667,23.8333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.6666666666667"
+                    Point2="0,15.6666666666667"
+                    Point3="4,15.6666666666667" />
+                  <mssgle:LineSegment
+                    End="22.6666666666667,15.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.6666666666667,15.6666666666667"
+                    Point2="26.6666666666667,15.6666666666667"
+                    Point3="26.6666666666667,19.6666666666667" />
+                  <mssgle:LineSegment
+                    End="26.6666666666667,23.8333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="416,726"
+          Size="416,769"
+          Id="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Foreach Org Row"
+          TopLeft="64,126" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row\Get Org List"
+          TopLeft="168,37" />
+        <EdgeLayout
+          Id="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row.PrecedenceConstraints[Constraint]"
+          TopLeft="235.5,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.5,47"
+              Start="0,0"
+              End="36.5,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="32.5,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.5,23.5"
+                    Point2="36.5,23.5"
+                    Point3="36.5,27.5" />
+                  <mssgle:LineSegment
+                    End="36.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="563,950"
+          Size="563,993"
+          Id="Package\EtlProcessUpdateOrgs\Foreach Source Tier Row"
+          TopLeft="69,234" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\EtlProcessUpdateOrgs\GetTierInfo"
+          TopLeft="357,103" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\EtlProcessUpdateOrgs\Import Source System Org  Info"
+          TopLeft="61,99" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\EtlProcessUpdateOrgs\Truncate Org Stage Tables"
+          TopLeft="56,29" />
+        <EdgeLayout
+          Id="Package\EtlProcessUpdateOrgs.PrecedenceConstraints[Constraint]"
+          TopLeft="174.75,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\EtlProcessUpdateOrgs.PrecedenceConstraints[Constraint 1]"
+          TopLeft="423.5,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73,89"
+              Start="0,0"
+              End="-73,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.5"
+                    Point2="0,44.5"
+                    Point3="-4,44.5" />
+                  <mssgle:LineSegment
+                    End="-69,44.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69,44.5"
+                    Point2="-73,44.5"
+                    Point3="-73,48.5" />
+                  <mssgle:LineSegment
+                    End="-73,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\EtlProcessUpdateOrgs.PrecedenceConstraints[Constraint 2]"
+          TopLeft="291,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="718,1282"
+          Size="718,1325"
+          Id="Package\EtlProcessUpdateOrgs"
+          TopLeft="140,80" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
