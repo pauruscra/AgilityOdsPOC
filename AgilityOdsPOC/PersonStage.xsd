@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PersonStage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Person">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice maxOccurs="unbounded">
+                <xs:element name="PrsnEmployeeNumber" type="xs:string" />
+                <xs:element name="PrsnEmployeeCode" type="xs:string" />
+                <xs:element name="PrsnFullName" type="xs:string" />
+                <xs:element name="PrsnFirstName" type="xs:string" />
+                <xs:element name="PrsnMiddleName" type="xs:string" />
+                <xs:element name="PrsnLastName" type="xs:string" />
+                <xs:element name="PrsnNickName" type="xs:string" />
+                <xs:element name="PrsnNameSuffix" type="xs:string" />
+                <xs:element name="PrsnGender" type="xs:string" />
+                <xs:element name="PrsnEmailAddress" type="xs:string" />
+                <xs:element name="PrsnEmployeeStatus" type="xs:string" />
+                <xs:element name="PrsnEmployeeStatusDescription" type="xs:string" />
+                <xs:element name="PrsnAddressLine1" type="xs:string" />
+                <xs:element name="PrsnAddressLine2" type="xs:string" />
+                <xs:element name="PrsnWorkPhoneNumber" type="xs:string" />
+                <xs:element name="PrsnWorkPhoneExtension" type="xs:string" />
+                <xs:element name="PrsnSubcontractorFlag" type="xs:string" />
+                <xs:element name="PrsnAdministrativeFlag" type="xs:string" />
+                <xs:element name="PrsnProfessionalFlag" type="xs:string" />
+                <xs:element name="PrsnRetiredPartnerFlag" type="xs:string" />
+                <xs:element name="PrsnPartnerTypeCode" type="xs:string" />
+                <xs:element name="PrsnPartnerTypeDescription" type="xs:string" />
+                <xs:element name="PrsnPartnerAdminProfFlag" type="xs:string" />
+                <xs:element name="PrsnPartnerOtherFlag" type="xs:string" />
+                <xs:element name="PrsnTier" type="xs:string" />
+                <xs:element name="PrsnLineOfBusinessCode" type="xs:string" />
+                <xs:element name="PrsnLineOfBusinessDescription" type="xs:string" />
+                <xs:element name="PrsnServiceLineCode" type="xs:string" />
+                <xs:element name="PrsnServiceLineDescription" type="xs:string" />
+                <xs:element name="PrsnLocationCode" type="xs:string" />
+                <xs:element name="PrsnLocationDescription" type="xs:string" />
+                <xs:element name="PrsnSalaryClassCode" type="xs:string" />
+                <xs:element name="PrsnSalaryClassDescription" type="xs:string" />
+                <xs:element name="PrsnExemptEmployee" type="xs:string" />
+                <xs:element name="PrsnAdjustedHireDate" type="xs:dateTime" />
+                <xs:element name="PrsnAnniversaryDate" type="xs:dateTime" />
+                <xs:element name="PrsnTerminationDate" type="xs:dateTime" />
+                <xs:element name="PrsnFTEPercentage" type="xs:decimal" />
+                <xs:element name="PrsnPensionPlan" type="xs:string" />
+                <xs:element name="PrsnRankCode" type="xs:string" />
+                <xs:element name="PrsnRankDescription" type="xs:string" />
+                <xs:element name="PrsnWorkSchedule" type="xs:string" />
+                <xs:element name="PrsnAnnualHours" type="xs:unsignedShort" />
+                <xs:element name="PrsnPartnerCategoryCode" type="xs:string" />
+                <xs:element name="PrsnPartnerCategoryDescription" type="xs:string" />
+                <xs:element name="PrsnPartnerRetirementDate" type="xs:dateTime" />
+                <xs:element name="PrsnPartnerSeparationTypeCode" type="xs:string" />
+                <xs:element name="PrsnPartnerSeparationTypeDescription" type="xs:string" />
+                <xs:element name="PrsnJobTitleCode" type="xs:string" />
+                <xs:element name="PrsnJobTitleDescription" type="xs:string" />
+                <xs:element name="PrsnManagingDirectorRolePriority" type="xs:string" />
+                <xs:element name="PrsnPositionRole" type="xs:string" />
+                <xs:element name="PrsnPrimaryIndustryFocus" type="xs:string" />
+                <xs:element name="PrsnCapitalMarket" type="xs:string" />
+                <xs:element name="PrsnTechnicalSpecializations" type="xs:string" />
+                <xs:element name="PrsnIsTimeAndExpenseAllowed" type="xs:int" />
+                <xs:element name="PrsnCapabilityPrimary" type="xs:string" />
+                <xs:element name="PrsnCapabilitySecondary" type="xs:string" />
+                <xs:element name="PrsnDateModified" type="xs:dateTime" />
+              </xs:choice>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

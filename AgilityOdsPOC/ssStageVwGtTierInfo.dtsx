@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ssStageVwGtTierInfo"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{2AF616A7-20D9-48E6-9B81-6F9A5287C7C0}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{53F19927-53F3-4D1F-922C-C9C7C2EEC407}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -495,7 +495,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Session Status to Failed"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -511,7 +511,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Session Status to Succeeded"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -549,1010 +549,11 @@
           version="1">
           <components>
             <component
-              refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion vw_GTTierInfo"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[Tier]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="Tier"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[Tier]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[LineOfBusinessCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="3"
-                      cachedName="LineOfBusinessCode"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LineOfBusinessCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[LineOfBusinessDescription]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="LineOfBusinessDescription"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LineOfBusinessDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[LocationCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="3"
-                      cachedName="LocationCode"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[LocationDescription]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="LocationDescription"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[LocationGroupCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="LocationGroupCode"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationGroupCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[MarketCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="MarketCode"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[MarketDescription]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="MarketDescription"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[MarketGroupCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="MarketGroupCode"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketGroupCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[MarketGroupDescription]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="MarketGroupDescription"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketGroupDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[RegionCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="RegionCode"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[RegionCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[RegionDescription]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="RegionDescription"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[RegionDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="3"
-                      cachedName="ServiceLineCode"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineDescription]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="ServiceLineDescription"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroup]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="ServiceLineGroup"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroup]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[IsActive]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="1"
-                      cachedName="IsActive"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[IsActive]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL1Code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="ServiceLineGroupL1Code"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL1Code]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL1Description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="ServiceLineGroupL1Description"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL1Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL2Code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="ServiceLineGroupL2Code"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL2Code]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL2Description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="ServiceLineGroupL2Description"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL2Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL3Code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="ServiceLineGroupL3Code"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL3Code]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL3Description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="ServiceLineGroupL3Description"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL3Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL4Code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="ServiceLineGroupL4Code"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL4Code]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL4Description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="ServiceLineGroupL4Description"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL4Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL5Code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="ServiceLineGroupL5Code"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL5Code]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL5Description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="ServiceLineGroupL5Description"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL5Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL6Code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="ServiceLineGroupL6Code"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL6Code]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL6Description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="ServiceLineGroupL6Description"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL6Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL7Code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="ServiceLineGroupL7Code"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL7Code]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL7Description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="ServiceLineGroupL7Description"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL7Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL8Code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="ServiceLineGroupL8Code"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL8Code]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[ServiceLineGroupL8Description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="ServiceLineGroupL8Description"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL8Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[LocationGroupDescription]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="80"
-                      cachedName="LocationGroupDescription"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationGroupDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input].Columns[DateModified]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="DateModified"
-                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[DateModified]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgTier]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgTier]"
-                      name="OrgTier"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[Tier]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLineOfBusinessCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="3"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLineOfBusinessCode]"
-                      name="OrgLineOfBusinessCode"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LineOfBusinessCode]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLineOfBusinessDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLineOfBusinessDescription]"
-                      name="OrgLineOfBusinessDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LineOfBusinessDescription]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="3"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationCode]"
-                      name="OrgLocationCode"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationCode]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationDescription]"
-                      name="OrgLocationDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationDescription]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationGroupCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationGroupCode]"
-                      name="OrgLocationGroupCode"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationGroupCode]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketCode]"
-                      name="OrgMarketCode"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketCode]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketDescription]"
-                      name="OrgMarketDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketDescription]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketGroupCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketGroupCode]"
-                      name="OrgMarketGroupCode"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketGroupCode]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketGroupDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketGroupDescription]"
-                      name="OrgMarketGroupDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketGroupDescription]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgRegionCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgRegionCode]"
-                      name="OrgRegionCode"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[RegionCode]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgRegionDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgRegionDescription]"
-                      name="OrgRegionDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[RegionDescription]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="3"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineCode]"
-                      name="OrgServiceLineCode"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineCode]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineDescription]"
-                      name="OrgServiceLineDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineDescription]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroup]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroup]"
-                      name="OrgServiceLineGroup"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroup]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgIsActive]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="1"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgIsActive]"
-                      name="OrgIsActive"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[IsActive]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL1Code]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL1Code]"
-                      name="OrgServiceLineGroupL1Code"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL1Code]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL1Description]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL1Description]"
-                      name="OrgServiceLineGroupL1Description"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL1Description]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL2Code]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL2Code]"
-                      name="OrgServiceLineGroupL2Code"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL2Code]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL2Description]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL2Description]"
-                      name="OrgServiceLineGroupL2Description"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL2Description]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL3Code]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL3Code]"
-                      name="OrgServiceLineGroupL3Code"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL3Code]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL3Description]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL3Description]"
-                      name="OrgServiceLineGroupL3Description"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL3Description]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL4Code]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL4Code]"
-                      name="OrgServiceLineGroupL4Code"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL4Code]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL4Description]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL4Description]"
-                      name="OrgServiceLineGroupL4Description"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL4Description]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL5Code]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL5Code]"
-                      name="OrgServiceLineGroupL5Code"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL5Code]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL5Description]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL5Description]"
-                      name="OrgServiceLineGroupL5Description"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL5Description]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL6Code]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL6Code]"
-                      name="OrgServiceLineGroupL6Code"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL6Code]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL6Description]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL6Description]"
-                      name="OrgServiceLineGroupL6Description"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL6Description]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL7Code]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL7Code]"
-                      name="OrgServiceLineGroupL7Code"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL7Code]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL7Description]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL7Description]"
-                      name="OrgServiceLineGroupL7Description"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL7Description]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL8Code]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="30"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL8Code]"
-                      name="OrgServiceLineGroupL8Code"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL8Code]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL8Description]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL8Description]"
-                      name="OrgServiceLineGroupL8Description"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL8Description]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationGroupDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="80"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationGroupDescription]"
-                      name="OrgLocationGroupDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationGroupDescription]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgDateModified]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgDateModified]"
-                      name="OrgDateModified"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[DateModified]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource"
+              refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB StageTierInfoSource"
+              name="OLE DB Stage OrgInfoSource"
               usesDispositions="true"
               version="4">
               <properties>
@@ -1563,7 +564,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[StageTierInfoSource]</property>
+                  name="OpenRowset">[Stage].[OrgInfoSource]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1585,15 +586,15 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">true</property>
+                  name="FastLoadKeepIdentity">false</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">true</property>
+                  name="FastLoadKeepNulls">false</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
@@ -1605,7 +606,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Connections[OleDbConnection]"
+                  refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Connections[OleDbConnection]"
                   connectionManagerID="{197631C4-A195-49B2-A497-39D89F0A080D}:external"
                   connectionManagerRefId="Project.ConnectionManagers[prj-OAKL-XPC0A9SVV_PAURUSCRA2016 AODS]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1613,442 +614,508 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input]"
+                  refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgTier]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[Tier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="30"
-                      cachedName="OrgTier"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgTier]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgTier]" />
+                      cachedName="Tier"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgTier]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[Tier]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgLineOfBusinessCode]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[LineOfBusinessCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="3"
-                      cachedName="OrgLineOfBusinessCode"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLineOfBusinessCode]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLineOfBusinessCode]" />
+                      cachedName="LineOfBusinessCode"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLineOfBusinessCode]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LineOfBusinessCode]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgLocationCode]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="OrgLocationCode"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationCode]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgLocationGroupCode]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="OrgLocationGroupCode"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationGroupCode]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationGroupCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgMarketCode]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="OrgMarketCode"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketCode]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgMarketGroupCode]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="OrgMarketGroupCode"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketGroupCode]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketGroupCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgRegionCode]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="OrgRegionCode"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgRegionCode]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgRegionCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineCode]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="OrgServiceLineCode"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineCode]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineCode]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroup]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[LineOfBusinessDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="80"
-                      cachedName="OrgServiceLineGroup"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroup]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroup]" />
+                      cachedName="LineOfBusinessDescription"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLineOfBusinessName]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LineOfBusinessDescription]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgIsActive]"
-                      cachedDataType="wstr"
-                      cachedLength="1"
-                      cachedName="OrgIsActive"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgIsActive]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgIsActive]" />
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[LocationCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="LocationCode"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationCode]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationCode]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL1Code]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[LocationGroupCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="30"
-                      cachedName="OrgServiceLineGroupL1Code"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL1Code]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL1Code]" />
+                      cachedName="LocationGroupCode"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationGroupCode]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationGroupCode]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL2Code]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[LocationGroupDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="LocationGroupDescription"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationGroupName]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationGroupDescription]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[LocationDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="LocationDescription"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationName]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[LocationDescription]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[MarketCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="30"
-                      cachedName="OrgServiceLineGroupL2Code"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL2Code]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL2Code]" />
+                      cachedName="MarketCode"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketCode]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketCode]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL3Code]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[MarketDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="MarketDescription"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketName]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketDescription]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[MarketGroupCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="30"
-                      cachedName="OrgServiceLineGroupL3Code"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL3Code]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL3Code]" />
+                      cachedName="MarketGroupCode"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketGroupCode]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketGroupCode]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL4Code]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[MarketGroupDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="MarketGroupDescription"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketGroupName]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[MarketGroupDescription]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[RegionCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="30"
-                      cachedName="OrgServiceLineGroupL4Code"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL4Code]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL4Code]" />
+                      cachedName="RegionCode"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgRegionCode]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[RegionCode]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL5Code]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[RegionDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="RegionDescription"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgRegionName]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[RegionDescription]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="ServiceLineCode"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineCode]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineCode]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="ServiceLineDescription"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineName]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineDescription]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroup]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="ServiceLineGroup"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroup]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroup]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL1Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="30"
-                      cachedName="OrgServiceLineGroupL5Code"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL5Code]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL5Code]" />
+                      cachedName="ServiceLineGroupL1Code"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL1Code]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL1Code]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL6Code]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL1Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="ServiceLineGroupL1Description"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL1Name]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL1Description]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL2Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="30"
-                      cachedName="OrgServiceLineGroupL6Code"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL6Code]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL6Code]" />
+                      cachedName="ServiceLineGroupL2Code"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL2Code]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL2Code]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL7Code]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL2Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="ServiceLineGroupL2Description"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL2Name]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL2Description]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL3Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="30"
-                      cachedName="OrgServiceLineGroupL7Code"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL7Code]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL7Code]" />
+                      cachedName="ServiceLineGroupL3Code"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL3Code]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL3Code]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL8Code]"
-                      cachedDataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL3Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="ServiceLineGroupL3Description"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL3Name]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL3Description]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL4Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="30"
-                      cachedName="OrgServiceLineGroupL8Code"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL8Code]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL8Code]" />
+                      cachedName="ServiceLineGroupL4Code"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL4Code]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL4Code]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgDateModified]"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL4Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="ServiceLineGroupL4Description"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL4Name]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL4Description]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL5Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ServiceLineGroupL5Code"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL5Code]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL5Code]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL5Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="ServiceLineGroupL5Description"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL5Name]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL5Description]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL6Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ServiceLineGroupL6Code"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL6Code]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL6Code]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL6Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="ServiceLineGroupL6Description"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL6Name]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL6Description]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL7Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ServiceLineGroupL7Code"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL7Code]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL7Code]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL7Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="ServiceLineGroupL7Description"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL7Name]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL7Description]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL8Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ServiceLineGroupL8Code"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL8Code]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL8Code]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[ServiceLineGroupL8Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="ServiceLineGroupL8Description"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL8Name]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[ServiceLineGroupL8Description]" />
+                    <inputColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[DateModified]"
                       cachedDataType="dbTimeStamp"
-                      cachedName="OrgDateModified"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgDateModified]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgDateModified]" />
+                      cachedName="DateModified"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgDateModified]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[DateModified]" />
                     <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgLineOfBusinessDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgLineOfBusinessDescription"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLineOfBusinessName]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLineOfBusinessDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgLocationGroupDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgLocationGroupDescription"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationGroupName]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationGroupDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgLocationDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgLocationDescription"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationName]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgLocationDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgMarketGroupDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgMarketGroupDescription"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketGroupName]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketGroupDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgMarketDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgMarketDescription"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketName]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgMarketDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgRegionDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgRegionDescription"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgRegionName]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgRegionDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL5Description]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgServiceLineGroupL5Description"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL5Name]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL5Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL6Description]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgServiceLineGroupL6Description"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL6Name]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL6Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL7Description]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgServiceLineGroupL7Description"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL7Name]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL7Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgServiceLineDescription"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineName]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineDescription]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL8Description]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgServiceLineGroupL8Description"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL8Name]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL8Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL1Description]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgServiceLineGroupL1Description"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL1Name]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL1Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL2Description]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="OrgServiceLineGroupL2Description"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL2Name]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL2Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL3Description]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="OrgServiceLineGroupL3Description"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL3Name]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL3Description]" />
-                    <inputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].Columns[OrgServiceLineGroupL4Description]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="OrgServiceLineGroupL4Description"
-                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL4Name]"
-                      lineageId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output].Columns[OrgServiceLineGroupL4Description]" />
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].Columns[IsActive]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="IsActive"
+                      externalMetadataColumnId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgIsActive]"
+                      lineageId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output].Columns[IsActive]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgTier]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgTier]"
+                      codePage="1252"
+                      dataType="str"
                       length="30"
                       name="OrgTier" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLineOfBusinessCode]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLineOfBusinessCode]"
+                      codePage="1252"
+                      dataType="str"
                       length="3"
                       name="OrgLineOfBusinessCode" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineCode]"
-                      dataType="wstr"
-                      length="3"
-                      name="OrgServiceLineCode" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationCode]"
-                      dataType="wstr"
-                      length="3"
-                      name="OrgLocationCode" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroup]"
-                      dataType="wstr"
-                      length="80"
-                      name="OrgServiceLineGroup" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL1Code]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgServiceLineGroupL1Code" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL2Code]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgServiceLineGroupL2Code" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL3Code]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgServiceLineGroupL3Code" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL4Code]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgServiceLineGroupL4Code" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL5Code]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgServiceLineGroupL5Code" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL6Code]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgServiceLineGroupL6Code" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL7Code]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgServiceLineGroupL7Code" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL8Code]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgServiceLineGroupL8Code" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationGroupCode]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgLocationGroupCode" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgRegionCode]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgRegionCode" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketCode]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgMarketCode" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketGroupCode]"
-                      dataType="wstr"
-                      length="30"
-                      name="OrgMarketGroupCode" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgIsActive]"
-                      dataType="wstr"
-                      length="1"
-                      name="OrgIsActive" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgDateModified]"
-                      dataType="dbTimeStamp"
-                      name="OrgDateModified" />
-                    <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLineOfBusinessName]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLineOfBusinessName]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgLineOfBusinessName" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineName]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="OrgServiceLineCode" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineName]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgServiceLineName" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationName]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="OrgLocationCode" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationName]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgLocationName" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL1Name]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroup]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="OrgServiceLineGroup" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL1Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgServiceLineGroupL1Code" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL1Name]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgServiceLineGroupL1Name" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL2Name]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL2Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgServiceLineGroupL2Code" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL2Name]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgServiceLineGroupL2Name" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL3Name]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL3Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgServiceLineGroupL3Code" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL3Name]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgServiceLineGroupL3Name" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL4Name]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL4Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgServiceLineGroupL4Code" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL4Name]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgServiceLineGroupL4Name" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL5Name]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL5Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgServiceLineGroupL5Code" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL5Name]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgServiceLineGroupL5Name" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL6Name]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL6Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgServiceLineGroupL6Code" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL6Name]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgServiceLineGroupL6Name" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL7Name]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL7Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgServiceLineGroupL7Code" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL7Name]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgServiceLineGroupL7Name" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL8Name]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL8Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgServiceLineGroupL8Code" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgServiceLineGroupL8Name]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgServiceLineGroupL8Name" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationGroupName]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationGroupCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgLocationGroupCode" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgLocationGroupName]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgLocationGroupName" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgRegionName]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgRegionCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgRegionName]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgRegionName" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketName]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgMarketCode" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketName]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgMarketName" />
                     <externalMetadataColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketGroupName]"
-                      dataType="wstr"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketGroupCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="OrgMarketGroupCode" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgMarketGroupName]"
+                      codePage="1252"
+                      dataType="str"
                       length="80"
                       name="OrgMarketGroupName" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgIsActive]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="OrgIsActive" />
+                    <externalMetadataColumn
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input].ExternalColumns[OrgDateModified]"
+                      dataType="dbTimeStamp"
+                      name="OrgDateModified" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3007,13 +2074,8 @@ ORDER BY Tier</property>
           </components>
           <paths>
             <path
-              refId="Package\TierInfoDataImport.Paths[Data Conversion Output]"
-              endId="Package\TierInfoDataImport\OLE DB StageTierInfoSource.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Outputs[Data Conversion Output]" />
-            <path
               refId="Package\TierInfoDataImport.Paths[OLE DB Source Output]"
-              endId="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo.Inputs[Data Conversion Input]"
+              endId="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\TierInfoDataImport\OLE DB vw_GTTierInfo.Outputs[OLE DB Source Output]" />
           </paths>
@@ -3354,55 +2416,41 @@ ORDER BY Tier</property>
     design-time-name="Package\TierInfoDataImport">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="188,42"
+          Size="225,42"
           Id="Package\TierInfoDataImport\OLE DB vw_GTTierInfo"
-          TopLeft="114.5,77.5" />
+          TopLeft="98.5,77.5" />
         <NodeLayout
-          Size="214,42"
-          Id="Package\TierInfoDataImport\OLE DB StageTierInfoSource"
-          TopLeft="101.5,267.5" />
-        <NodeLayout
-          Size="229,42"
-          Id="Package\TierInfoDataImport\Data Conversion vw_GTTierInfo"
-          TopLeft="94,169" />
+          Size="216,42"
+          Id="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource"
+          TopLeft="92,192" />
         <EdgeLayout
           Id="Package\TierInfoDataImport.Paths[OLE DB Source Output]"
-          TopLeft="208.5,119.5">
+          TopLeft="211,119.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.5"
+              EndConnector="-11,72.5"
               Start="0,0"
-              End="0,42">
+              End="-11,65">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\TierInfoDataImport.Paths[Data Conversion Output]"
-          TopLeft="208.5,211">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.5"
-              Start="0,0"
-              End="0,49">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="0,32.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.25"
+                    Point2="0,36.25"
+                    Point3="-4,36.25" />
                   <mssgle:LineSegment
-                    End="0,49" />
+                    End="-7,36.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7,36.25"
+                    Point2="-11,36.25"
+                    Point3="-11,40.25" />
+                  <mssgle:LineSegment
+                    End="-11,65" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3419,6 +2467,19 @@ ORDER BY Tier</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TierInfoDataImport\OLE DB Stage OrgInfoSource">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

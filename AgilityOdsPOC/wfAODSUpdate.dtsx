@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="wfAodsUpdate"
   DTS:PackageType="5"
-  DTS:VersionBuild="155"
-  DTS:VersionGUID="{E7EEF1E5-07D0-472F-A90F-3267FDE1C6D6}">
+  DTS:VersionBuild="157"
+  DTS:VersionGUID="{1BFBBCD7-A264-47FF-9ED4-BD0CE1591A71}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -216,7 +216,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="wfProcessRunDate">
       <DTS:VariableValue
-        DTS:DataType="7">8/25/2016 7:55:28 PM</DTS:VariableValue>
+        DTS:DataType="7">8/27/2016 10:11:14 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -227,7 +227,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="wfProcessRunDateString">
       <DTS:VariableValue
-        DTS:DataType="8">2016-08-25 7:55:28 PM</DTS:VariableValue>
+        DTS:DataType="8">2016-08-27 10:11:14 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -294,7 +294,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="wfProcessStartDate">
       <DTS:VariableValue
-        DTS:DataType="7">8/25/2016 7:55:28 PM</DTS:VariableValue>
+        DTS:DataType="7">8/27/2016 10:11:14 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -305,7 +305,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="wfProcessStartDateString">
       <DTS:VariableValue
-        DTS:DataType="8">2016-08-25 7:55:28 PM</DTS:VariableValue>
+        DTS:DataType="8">2016-08-27 10:11:14 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
